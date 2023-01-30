@@ -1,0 +1,57 @@
+<div class="container-fluid pt-3">
+       
+           <div class="py-4">
+            <div class="d-flex justify-content-between w-100 flex-wrap">
+               <div class="mb-3 mb-lg-0">
+                  <h1 class="h4">Class {{getClass()}} Attendance</h1>
+                  
+               </div>
+               <div>
+                  <a  class="btn btn-outline-danger d-inline-flex align-items-center me-3" type="submit">
+                     Submit
+                  </a>
+               </div>
+            </div>
+          </div>
+        <div class="row pb-5">
+            <div class="card border-0 shadow mb-4">
+                <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-centered table-nowrap mb-0 rounded">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="border-0 rounded-start">No</th>
+                                    <th class="border-0">Name</th>
+                                    <th class="border-0">Father name</th>
+                                    <th class="border-0">Mother name</th>
+                                    <th class="border-0">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let student of students; let i = index">
+                                    <td>{{i + 1}}</td>
+                                    <td>{{student.firstName}}</td>
+                                    <td>{{student.fathername}}</td>
+                                    <td>{{student.mothername}}</td>
+                                    <td class ="select">
+                                        <select class="form-select" id = "status">
+                                            <option value = "Present">Present</option>
+                                            <option value = "Apsent">Apsent</option>
+                                        </select>
+                                    </td> 
+                                   
+                                </tr>    
+                            </tbody>
+                        </table>
+                       
+                      </div>
+                </div>
+                  
+                       
+                          
+            </div>
+        </div>
+
+   
+</div>
+   

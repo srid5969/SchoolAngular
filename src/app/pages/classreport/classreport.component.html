@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="card border-0 shadow">
+        <div class="card-body">
+            <h4 class="text-center bg-tertiary rounded text-white mb-4 shadow">Class Report</h4>
+           <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+
+                <div class="form-group col-4">
+                    <div class="mb-3">
+                        <label for="className" class="text-uppercase">Class List</label>
+                        <select class="form-select" formControlName="className"  id="className">
+                            <option *ngFor="let class of classes">
+                                {{class.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                       
+            
+            <div class="form-group col-4">
+                <div class="mb-3">
+                    <label for="from">From</label>
+                    <div class="input-group">
+                    <span class="input-group-text">
+                        <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                    <input data-datepicker="" class="form-control" formControlName="from" id="from" type="date" placeholder="dd/mm/yyyy" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-4">
+                <div class="mb-3">
+                    <label for="to">To</label>
+                    <div class="input-group">
+                    <span class="input-group-text">
+                        <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                    <input data-datepicker="" class="form-control" formControlName="to" id="to" type="date" placeholder="dd/mm/yyyy" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <button class="btn btn-outline-tertiary" type="submit">Generate Report</button>
+            </div>
+        </div>
+      </form>
+        </div>
+    </div>
+        
+   
+  
+</div>

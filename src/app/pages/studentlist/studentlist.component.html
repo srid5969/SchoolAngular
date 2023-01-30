@@ -1,0 +1,115 @@
+<div class="container-fluid mt-3">
+    <div class="py-4">
+      <div class="d-flex justify-content-between w-100 flex-wrap">
+         <div class="mb-3 mb-lg-0">
+            <h1 class="h4">Class {{getClass()}}</h1>
+            
+         </div>
+         <div>
+            <a  class="btn btn-outline-danger d-inline-flex align-items-center me-3" routerLink="/navbar/addstudent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill me-2" viewBox="0 0 16 16">
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+              </svg>
+               Add Student
+            </a>
+         </div>
+      </div>
+    </div>
+   <div class="card border-0 shadow mb-4">
+       <div class="card-body">
+          <div class="table-responsive">
+   
+           <table datatable [dtOptions]="dtOptions"  class="row-border hover">
+               <thead>
+                   <tr>
+                       <th>No</th>
+                       <th>Name</th>
+                       <th>Father Name</th>
+                       <th>Mother Name</th>
+                       <th>city</th>
+                       <th>Details</th>
+                       
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr *ngFor="let student of students; let i = index">
+                       <td>{{i + 1}}</td>
+                       <td>{{student.firstName}}</td>
+                       <td>{{student.fathername}}</td>
+                       <td>{{student.mothername}}</td>
+                       <td>{{student.city}}</td>
+                       <td><a data-bs-toggle="modal" data-bs-target="#modal-achievement" (click)="getStudent(i)"><i class="bi bi-eye-fill fs-5 text-info"></i></a></td>
+                  
+               </tbody>
+             </table>
+            
+          </div>
+       </div>
+    </div>
+   
+   </div>
+   
+   
+
+  <div class="modal fade" id="modal-achievement" tabindex="-1" role="dialog" aria-labelledby="modal-achievement" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-tertiary modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button type="button" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header mx-auto">
+              <p class="lead mb-0 text-white"></p>
+          </div>
+          <div class="modal-body pt-0">
+              <div class="py-3 px-5 text-center">
+                <img src="assets/img/profile-picture-1.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
+                <h2 class="h3 modal-title text-white">{{newName}}</h2>
+                <p class="fs-4 mb-3 text-white">{{getClass()}}</p>
+                
+                <div class="m-3">
+
+
+                  <div class="row d-flex">
+                    <div class="col">
+                      <span class="fs-4 text-white ">DOB</span>
+                    </div>
+                    <div class="col">
+                      <span class="text-white">{{DOB}}</span>
+                    </div>
+                  </div>
+
+                  <div class="row d-flex">
+                    <div class="col">
+                      <span class="fs-4 text-white ">Father Name</span>
+                    </div>
+                    <div class="col">
+                      <span class="text-white">{{FatherName}}</span>
+                    </div>
+                  </div>
+
+                  <div class="row d-flex">
+                    <div class="col">
+                      <span class="fs-4 text-white ">Mother Name</span>
+                    </div>
+                    <div class="col">
+                      <span class="text-white">{{MotherName}}</span>
+                    </div>
+                  </div>
+
+                  <div class="row d-flex">
+                    <div class="col">
+                      <span class="fs-4 text-white ">City</span>
+                    </div>
+                    <div class="col">
+                      <span class="text-white">{{City}}</span>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              
+          </div>
+          <div class="modal-footer d-flex justify-content-center pt-0 pb-3"></div>
+        </div>
+    </div>
+  </div>
+     
